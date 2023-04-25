@@ -1,0 +1,20 @@
+//@ Function taken from sonic3air_dev/scripts/standalone/rendering/render_character.lemon
+function string getCharacterSpriteKey(u8 character)
+{
+    //Spring twirl
+    if (global.xtrachar == 64 && character == CHARACTER_SONIC && char.state == 0x31)
+    {
+        return "Monty_Speen_%d"
+    }
+    return base.getCharacterSpriteKey(character)
+}
+
+function string getESCharacterFallSpriteKey(u8 character, u8 extrachar)
+{
+    //Falling
+	if (extrachar == 64 && character == CHARACTER_SONIC)
+	{
+		return "Monty_falling_%d"
+	}
+	return base.getESCharacterFallSpriteKey(character, extrachar)
+}
